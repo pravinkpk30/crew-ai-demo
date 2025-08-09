@@ -139,7 +139,7 @@ export SERPER_API_KEY=your_serper_api_key_here
 Serper API is used for web search capabilities in your agents. Here's how to set it up:
 
 1. **Get a Serper API Key**:
-   - Go to [Serper.dev](https://serper.dev/) or https://serpapi.com/dashboard
+   - Go to [Serper.dev](https://serper.dev/)
    - Sign up for a free account (1000 free searches per month)
    - Get your API key from the dashboard
 

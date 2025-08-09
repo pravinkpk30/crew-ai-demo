@@ -2,12 +2,14 @@ from dotenv import load_dotenv
 from crewai import Agent, Task, Crew
 from crewai_tools import SerperDevTool
 from crewai import LLM
+import os
 
 load_dotenv()
 
 llm = LLM(
     model="gemini/gemini-2.0-flash",
-    temperature=0.1
+    temperature=0.1,
+    api_key=os.getenv("GOOGLE_API_KEY")
 )
 
 research_agent = Agent(
