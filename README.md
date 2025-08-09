@@ -127,6 +127,53 @@ uv remove package_name
 uv remove requirements.txt
 ```
 
+### Set environment variables
+
+```bash
+export GOOGLE_API_KEY=your_google_api_key_here
+export SERPER_API_KEY=your_serper_api_key_here
+```
+
+### Serper API Setup
+
+Serper API is used for web search capabilities in your agents. Here's how to set it up:
+
+1. **Get a Serper API Key**:
+   - Go to [Serper.dev](https://serper.dev/) or https://serpapi.com/dashboard
+   - Sign up for a free account (1000 free searches per month)
+   - Get your API key from the dashboard
+
+2. **Add to Environment Variables**:
+   - Add the API key to your `.env` file:
+     ```
+     SERPER_API_KEY=your_serper_api_key_here
+     ```
+   - Or set it in your shell:
+     ```bash
+     export SERPER_API_KEY=your_serper_api_key_here
+     ```
+
+3. **Usage in Code**:
+   ```python
+   from crewai_tools import SerperDevTool
+   
+   # Initialize the tool
+   search_tool = SerperDevTool()
+   
+   # Use it in an agent
+   research_agent = Agent(
+       role="Researcher",
+       goal="Find information online",
+       tools=[search_tool],
+       # ... other parameters
+   )
+   ```
+
+4. **Pricing**:
+   - Free tier: 1,000 searches/month
+   - Paid plans start at $10/month for 10,000 searches
+   - See [Serper Pricing](https://serper.dev/pricing) for details
+
 ## Learning Resources
 
 - [Google's Crash Course on CrewAI with Gemini API](https://ai.google.dev/gemini-api/docs/crewai-example) - Learn how to use CrewAI with Google's Gemini API
