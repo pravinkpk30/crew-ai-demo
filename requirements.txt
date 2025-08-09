@@ -1,0 +1,3 @@
+crewai[tools]
+google-generativeai
+python-dotenv
